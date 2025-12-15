@@ -1,9 +1,28 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
 
 /**
- * merge - merges two subarrays of array
- * @array: array to sort
+ * print_merge - prints the left or right subarray
+ * @array: array to print
+ * @start: start index
+ * @end: end index
+ */
+void print_merge(int *array, size_t start, size_t end)
+{
+	size_t i;
+	for (i = start; i <= end; i++)
+	{
+		printf("%d", array[i]);
+		if (i < end)
+			printf(", ");
+	}
+	printf("\n");
+}
+
+/**
+ * merge - merges two subarrays and prints steps
+ * @array: array to merge
  * @tmp: temporary array
  * @left: left index
  * @mid: middle index
@@ -13,14 +32,13 @@ void merge(int *array, int *tmp, size_t left, size_t mid, size_t right)
 {
 	size_t i = left, j = mid + 1, k = left;
 
-	while (i <= mid && j <= right)
-	{
-		if (array[i] <= array[j])
-			tmp[k++] = array[i++];
-		else
-			tmp[k++] = array[j++];
-	}
+	printf("Merging...\n[left]: ");
+	print_merge(array, left, mid);
+	printf("[right]: ");
+	print_merge(array, mid + 1, right);
 
+	while (i <= mid && j <= right)
+		tmp[k++] = (array[i] <= array[j]) ? array[i++] : array[j++];
 	while (i <= mid)
 		tmp[k++] = array[i++];
 	while (j <= right)
@@ -28,6 +46,9 @@ void merge(int *array, int *tmp, size_t left, size_t mid, size_t right)
 
 	for (i = left; i <= right; i++)
 		array[i] = tmp[i];
+
+	printf("[Done]: ");
+	print_merge(array, left, right);
 }
 
 /**
