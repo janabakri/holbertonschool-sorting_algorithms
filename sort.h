@@ -10,8 +10,7 @@
  * @prev: Pointer to the previous element of the list
  * @next: Pointer to the next element of the list
  *
- * Description: This structure represents a node in a doubly
- * linked list of integers.
+ * Description: Node in a doubly linked list of integers
  */
 typedef struct listint_s
 {
@@ -27,12 +26,13 @@ void print_list(const listint_t *list);
 /* Array sorting algorithms */
 void bubble_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list); /* for doubly linked list */
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
 
-/* List sorting algorithms */
-void insertion_sort_list(listint_t **list);
+/* Doubly linked list sorting algorithms */
 void cocktail_sort_list(listint_t **list);
 
 #endif /* SORT_H */
