@@ -24,8 +24,58 @@ static void swap_nodes(listint_t **list, listint_t *left, listint_t *right)
 }
 
 /**
- * cocktail_sort_list - sorts a doubly linked list of integers
- *                      using Cocktail shaker sort
+ * forward_pass - performs a forward cocktail pass
+ * @list: pointer to the head of the list
+ * Return: pointer to last node visited
+ */
+static listint_t *forward_pass(listint_t **list)
+{
+	listint_t *curr = *list;
+	int swapped = 0;
+
+	while (curr->next)
+	{
+		if (curr->n > curr->next->n)
+		{
+			swap_nodes(list, curr, curr->next);
+			print_list(*list);
+			swapped = 1;
+		}
+		else
+			curr = curr->next;
+	}
+
+	return (swapped ? curr : NULL);
+}
+
+/**
+ * backward_pass - performs a backward cocktail pass
+ * @list: pointer to the head of the list
+ * @curr: starting node
+ * Return: 1 if swapped, 0 otherwise
+ */
+static int backward_pass(listint_t **list, listint_t *curr)
+{
+	int swapped = 0;
+
+	while (curr->prev)
+	{
+		if (curr->n < curr->prev->n)
+		{
+			swap_nodes(list, curr->prev, curr);
+			print_list(*list);
+			swapped = 1;
+		}
+		else
+			curr = curr->prev;
+	}
+
+	return (swapped);
+}
+
+/**
+ * cocktail_sort_list - sorts a doubly linked list using
+ *                      Cocktail shaker sort algorithm
  * @list: pointer to the head of the list
  */
 void cocktail_sort_list(listint_t **list)
@@ -39,38 +89,12 @@ void cocktail_sort_list(listint_t **list)
 	while (swapped)
 	{
 		swapped = 0;
-		curr = *list;
 
-		/* Forward pass */
-		while (curr->next)
-		{
-			if (curr->n > curr->next->n)
-			{
-				swap_nodes(list, curr, curr->next);
-				print_list(*list);
-				swapped = 1;
-			}
-			else
-				curr = curr->next;
-		}
-
-		if (!swapped)
+		curr = forward_pass(list);
+		if (!curr)
 			break;
 
-		swapped = 0;
-
-		/* Backward pass */
-		while (curr->prev)
-		{
-			if (curr->n < curr->prev->n)
-			{
-				swap_nodes(list, curr->prev, curr);
-				print_list(*list);
-				swapped = 1;
-			}
-			else
-				curr = curr->prev;
-		}
+		swapped = backward_pass(list, curr);
 	}
 }
 
