@@ -1,38 +1,17 @@
-#include "sort.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "sort.h"
 
 /**
- * merge - merge two sorted subarrays into one
- * @array: array to merge
+ * merge - merges two subarrays of array
+ * @array: array to sort
  * @tmp: temporary array
- * @left: left index of subarray
+ * @left: left index
  * @mid: middle index
- * @right: right index of subarray
+ * @right: right index
  */
-static void merge(int *array, int *tmp, size_t left, size_t mid, size_t right)
+void merge(int *array, int *tmp, size_t left, size_t mid, size_t right)
 {
-	size_t i, j, k;
-
-	printf("Merging...\n[left]: ");
-	for (i = left; i <= mid; i++)
-	{
-		printf("%d", array[i]);
-		if (i != mid)
-			printf(", ");
-	}
-	printf("\n[right]: ");
-	for (i = mid + 1; i <= right; i++)
-	{
-		printf("%d", array[i]);
-		if (i != right)
-			printf(", ");
-	}
-	printf("\n");
-
-	i = left;
-	j = mid + 1;
-	k = left;
+	size_t i = left, j = mid + 1, k = left;
 
 	while (i <= mid && j <= right)
 	{
@@ -49,25 +28,16 @@ static void merge(int *array, int *tmp, size_t left, size_t mid, size_t right)
 
 	for (i = left; i <= right; i++)
 		array[i] = tmp[i];
-
-	printf("[Done]: ");
-	for (i = left; i <= right; i++)
-	{
-		printf("%d", array[i]);
-		if (i != right)
-			printf(", ");
-	}
-	printf("\n");
 }
 
 /**
- * merge_sort_recursive - recursive merge sort implementation
+ * merge_sort_recursive - recursively splits and merges array
  * @array: array to sort
  * @tmp: temporary array
  * @left: left index
  * @right: right index
  */
-static void merge_sort_recursive(int *array, int *tmp, size_t left, size_t right)
+void merge_sort_recursive(int *array, int *tmp, size_t left, size_t right)
 {
 	size_t mid;
 
@@ -81,9 +51,9 @@ static void merge_sort_recursive(int *array, int *tmp, size_t left, size_t right
 }
 
 /**
- * merge_sort - sorts an array of integers using top-down merge sort
+ * merge_sort - sorts an array of integers in ascending order
  * @array: array to sort
- * @size: size of array
+ * @size: size of the array
  */
 void merge_sort(int *array, size_t size)
 {
@@ -97,7 +67,6 @@ void merge_sort(int *array, size_t size)
 		return;
 
 	merge_sort_recursive(array, tmp, 0, size - 1);
-
 	free(tmp);
 }
 
