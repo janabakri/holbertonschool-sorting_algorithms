@@ -37,8 +37,7 @@ Doubly linked lists
 | 100-shell_sort.c                 | C File         | Shell sort using Knuth sequence              |
 | 101-cocktail_sort_list.c         | C File         | Cocktail Shaker sort for doubly linked lists|
 | 101-O                            | Text File      | Cocktail shaker sort Big O notation         |
-| print_array.c                     | C File         | Helper function to print arrays             |
-| print_list.c                      | C File         | Helper function to print linked lists       |
+
 
 
 
