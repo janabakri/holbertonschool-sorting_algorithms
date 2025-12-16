@@ -4,7 +4,12 @@ Sorting Algorithms
 This repository contains implementations of several sorting algorithms in C, completed as part of the Holberton School curriculum.
 
 The goal of this project is to understand how different sorting algorithms work, how they compare in terms of efficiency, and how their time complexity changes depending on the input.
-Each algorithm sorts data in ascending order and prints the array or list after every swap, as required.
+
+Each algorithm:
+
+Sorts data in ascending order
+
+Prints the array or list after every swap, as required
 
 The project includes algorithms that work on:
 
@@ -59,9 +64,11 @@ The array is printed every time a swap occurs.
 
 Time Complexity
 
-Best case:    O(n)
+Best case: O(n)
+
 Average case: O(n²)
-Worst case:   O(n²)
+
+Worst case: O(n²)
 
 Insertion Sort (Doubly Linked List)
 
@@ -74,9 +81,11 @@ The list is printed after each swap.
 
 Time Complexity
 
-Best case:    O(n)
+Best case: O(n)
+
 Average case: O(n²)
-Worst case:   O(n²)
+
+Worst case: O(n²)
 
 Selection Sort
 
@@ -89,9 +98,11 @@ The array is printed after each swap.
 
 Time Complexity
 
-Best case:    O(n²)
+Best case: O(n²)
+
 Average case: O(n²)
-Worst case:   O(n²)
+
+Worst case: O(n²)
 
 Quick Sort (Lomuto Partition)
 
@@ -104,9 +115,11 @@ The array is printed every time two elements are swapped.
 
 Time Complexity
 
-Best case:    O(n log n)
+Best case: O(n log n)
+
 Average case: O(n log n)
-Worst case:   O(n²)
+
+Worst case: O(n²)
 
 Shell Sort (Knuth Sequence)
 
@@ -133,9 +146,11 @@ The list is printed after each swap.
 
 Time Complexity
 
-Best case:    O(n)
+Best case: O(n)
+
 Average case: O(n²)
-Worst case:   O(n²)
+
+Worst case: O(n²)
 
 🛠 Compilation
 
@@ -155,6 +170,8 @@ Printing after every swap
 
 Big O time complexity analysis
 
-👤 Author
-  Rama dafer ALshehri
-  Jana bakri
+👤 Authors
+
+Rama Dafer Alshehri
+
+Jana Bakri
