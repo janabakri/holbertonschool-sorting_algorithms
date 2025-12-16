@@ -156,19 +156,22 @@ Average case: O(n²)
 
 Worst case: O(n²)
 
-+------+----------------------+---------------------+--------+----------+
-| Task | Algorithm            | Data Structure      | Stable | In-Place |
-+------+----------------------+---------------------+--------+----------+
-| 0    | Bubble Sort          | Array               | Yes    | Yes      |
-| 1    | Insertion Sort       | Doubly Linked List  | Yes    | Yes      |
-| 2    | Selection Sort       | Array               | No     | Yes      |
-| 3    | Quick Sort           | Array               | No     | Yes      |
-| 100  | Shell Sort (Knuth)   | Array               | No     | Yes      |
-| 101  | Cocktail Shaker Sort | Doubly Linked List  | Yes    | Yes      |
-+------+----------------------+---------------------+--------+----------+
-Example compilation command:
+**📊 Algorithms Schedule**
 
+| Task | Algorithm               | Data Structure       | Stable | In-Place |
+|------|------------------------|--------------------|--------|----------|
+| 0    | Bubble Sort             | Array              | Yes    | Yes      |
+| 1    | Insertion Sort          | Doubly Linked List | Yes    | Yes      |
+| 2    | Selection Sort          | Array              | No     | Yes      |
+| 3    | Quick Sort              | Array              | No     | Yes      |
+| 100  | Shell Sort (Knuth)      | Array              | No     | Yes      |
+| 101  | Cocktail Shaker Sort    | Doubly Linked List | Yes    | Yes      |
+
+**🛠 Example compilation command:**  
+
+```bash
 gcc -Wall -Wextra -Werror -pedantic *.c -o sort
+
 
 ✅ What This Project Covers
 
