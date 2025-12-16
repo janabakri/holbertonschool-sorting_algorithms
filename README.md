@@ -22,21 +22,24 @@ Doubly linked lists
 
 **📁 Repository Structure**
 
-📁 holbertonschool-sorting_algorithms
-├── sort.h
-├── 0-bubble_sort.c
-├── 0-O
-├── 1-insertion_sort_list.c
-├── 1-O
-├── 2-selection_sort.c
-├── 2-O
-├── 3-quick_sort.c
-├── 3-O
-├── 100-shell_sort.c
-├── 101-cocktail_sort_list.c
-├── 101-O
-├── print_array.c
-└── print_list.c
+| File / Folder                   | Type           | Description                                  |
+|---------------------------------|----------------|----------------------------------------------|
+| holbertonschool-sorting_algorithms | Folder        | Root directory of the project                |
+| sort.h                           | Header File    | Contains function prototypes & structures    |
+| 0-bubble_sort.c                  | C File         | Bubble sort implementation                   |
+| 0-O                              | Text File      | Bubble sort Big O notation                   |
+| 1-insertion_sort_list.c          | C File         | Insertion sort for doubly linked lists      |
+| 1-O                              | Text File      | Insertion sort Big O notation               |
+| 2-selection_sort.c               | C File         | Selection sort implementation                |
+| 2-O                              | Text File      | Selection sort Big O notation               |
+| 3-quick_sort.c                   | C File         | Quick sort (Lomuto partition)               |
+| 3-O                              | Text File      | Quick sort Big O notation                    |
+| 100-shell_sort.c                 | C File         | Shell sort using Knuth sequence              |
+| 101-cocktail_sort_list.c         | C File         | Cocktail Shaker sort for doubly linked lists|
+| 101-O                            | Text File      | Cocktail shaker sort Big O notation         |
+| print_array.c                     | C File         | Helper function to print arrays             |
+| print_list.c                      | C File         | Helper function to print linked lists       |
+
 
 
 
