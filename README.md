@@ -1,5 +1,6 @@
-Sorting Algorithms
-📌 About the Project
+**Sorting Algorithms**
+
+*📌 About the Project*
 
 This repository contains implementations of several sorting algorithms in C, completed as part of the Holberton School curriculum.
 
@@ -19,7 +20,8 @@ Arrays of integers
 
 Doubly linked lists
 
-📁 Repository Structure
+**📁 Repository Structure**
+
 holbertonschool-sorting_algorithms
 │
 ├── sort.h
@@ -44,7 +46,9 @@ holbertonschool-sorting_algorithms
 ├── print_array.c
 └── print_list.c
 
-📌 Header File
+
+**📌 Header File**
+
 sort.h
 
 This file contains all function prototypes and the definition of the listint_t structure used for doubly linked lists.
@@ -56,8 +60,10 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 
-🚀 Implemented Algorithms
+**🚀 Implemented Algorithms**
+
 🟢 Bubble Sort
+
 
 Files: 0-bubble_sort.c, 0-O
 
@@ -154,16 +160,16 @@ Average case: O(n²)
 
 Worst case: O(n²)
 
-📊 Algorithms Schedule
-Task	Algorithm	Data Structure	Stable	In-Place
-0	Bubble Sort	Array	Yes	Yes
-1	Insertion Sort	Doubly Linked List	Yes	Yes
-2	Selection Sort	Array	No	Yes
-3	Quick Sort	Array	No	Yes
-100	Shell Sort (Knuth)	Array	No	Yes
-101	Cocktail Shaker Sort	Doubly Linked List	Yes	Yes
-🛠 Compilation
-
++------+----------------------+---------------------+--------+----------+
+| Task | Algorithm            | Data Structure      | Stable | In-Place |
++------+----------------------+---------------------+--------+----------+
+| 0    | Bubble Sort          | Array               | Yes    | Yes      |
+| 1    | Insertion Sort       | Doubly Linked List  | Yes    | Yes      |
+| 2    | Selection Sort       | Array               | No     | Yes      |
+| 3    | Quick Sort           | Array               | No     | Yes      |
+| 100  | Shell Sort (Knuth)   | Array               | No     | Yes      |
+| 101  | Cocktail Shaker Sort | Doubly Linked List  | Yes    | Yes      |
++------+----------------------+---------------------+--------+----------+
 Example compilation command:
 
 gcc -Wall -Wextra -Werror -pedantic *.c -o sort
@@ -180,7 +186,7 @@ Printing output after every swap
 
 Big O time complexity analysis
 
-👤 Authors
+**👤 Authors**
 
 Rama Dafer Alshehri
 
