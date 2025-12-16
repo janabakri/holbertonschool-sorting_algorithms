@@ -1,5 +1,6 @@
 **Sorting Algorithms**
 
+
 *📌 About the Project*
 
 This repository contains implementations of several sorting algorithms in C, completed as part of the Holberton School curriculum.
