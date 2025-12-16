@@ -1,136 +1,160 @@
-Sorting Algorithms Project
-This project implements multiple sorting algorithms in C with analysis of their time complexity using Big O notation.
+Sorting Algorithms
+📌 About the Project
 
-🎯 Project Overview
-A team implementation of fundamental and advanced sorting algorithms with proper complexity analysis and visualization.
+This repository contains implementations of several sorting algorithms in C, completed as part of the Holberton School curriculum.
 
-📁 Project Structure
-Core Files:
-sort.h - Header file containing all function prototypes and data structures
+The goal of this project is to understand how different sorting algorithms work, how they compare in terms of efficiency, and how their time complexity changes depending on the input.
+Each algorithm sorts data in ascending order and prints the array or list after every swap, as required.
 
-0-bubble_sort.c - Bubble sort implementation for arrays
+The project includes algorithms that work on:
 
-1-insertion_sort_list.c - Insertion sort implementation for doubly linked lists
+Arrays of integers
 
-2-selection_sort.c - Selection sort implementation for arrays
+Doubly linked lists
 
-3-quick_sort.c - Quick sort implementation using Lomuto partition scheme
+📁 Repository Contents
+holbertonschool-sorting_algorithms/
+│
+├── sort.h
+│
+├── 0-bubble_sort.c
+├── 0-O
+│
+├── 1-insertion_sort_list.c
+├── 1-O
+│
+├── 2-selection_sort.c
+├── 2-O
+│
+├── 3-quick_sort.c
+├── 3-O
+│
+├── 100-shell_sort.c
+│
+├── 101-cocktail_sort_list.c
+├── 101-O
+│
+├── print_array.c
+└── print_list.c
 
-print_array.c - Helper function to print integer arrays
+📌 Header File
+sort.h
 
-print_list.c - Helper function to print doubly linked lists
+This file contains all function prototypes and the definition of the listint_t structure used for doubly linked lists.
 
-Test Files:
-0-main.c - Test file for Bubble Sort
+void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
+void shell_sort(int *array, size_t size);
+void cocktail_sort_list(listint_t **list);
 
-1-main.c - Test file for Insertion Sort
+🚀 Implemented Algorithms
+Bubble Sort
 
-2-main.c - Test file for Selection Sort
+Files: 0-bubble_sort.c, 0-O
 
-3-main.c - Test file for Quick Sort
+Bubble Sort works by repeatedly comparing adjacent elements and swapping them if they are in the wrong order.
+The array is printed every time a swap occurs.
 
-Complexity Analysis:
-0-O - Big O notation for Bubble Sort
+Time Complexity
 
-1-O - Big O notation for Insertion Sort
+Best case:    O(n)
+Average case: O(n²)
+Worst case:   O(n²)
 
-2-O - Big O notation for Selection Sort
+Insertion Sort (Doubly Linked List)
 
-3-O - Big O notation for Quick Sort
+Files: 1-insertion_sort_list.c, 1-O
 
-🚀 Algorithms Implemented
-1. Bubble Sort (0-bubble_sort.c)
-Function: void bubble_sort(int *array, size_t size);
+Insertion Sort builds a sorted list one element at a time.
+This implementation works on a doubly linked list and swaps nodes themselves instead of modifying their values.
 
-Description:
+The list is printed after each swap.
 
-Simple comparison-based algorithm that repeatedly steps through the list
+Time Complexity
 
-Compares adjacent elements and swaps them if they're in the wrong order
+Best case:    O(n)
+Average case: O(n²)
+Worst case:   O(n²)
 
-Continues until no swaps are needed
+Selection Sort
 
-Complexity Analysis:
+Files: 2-selection_sort.c, 2-O
 
-Best Case: O(n) - Array is already sorted
+Selection Sort divides the array into a sorted and an unsorted section.
+It repeatedly selects the smallest element from the unsorted part and moves it to the correct position.
 
-Average Case: O(n²)
+The array is printed after each swap.
 
-Worst Case: O(n²) - Array is reverse sorted
+Time Complexity
 
-Space: O(1) - In-place sorting
+Best case:    O(n²)
+Average case: O(n²)
+Worst case:   O(n²)
 
-Stability: Stable
+Quick Sort (Lomuto Partition)
 
-2. Insertion Sort (1-insertion_sort_list.c)
-Function: void insertion_sort_list(listint_t **list);
+Files: 3-quick_sort.c, 3-O
 
-Description:
+Quick Sort is a divide-and-conquer algorithm.
+This implementation uses the Lomuto partition scheme, where the last element of the array is chosen as the pivot.
 
-Builds the final sorted list one item at a time
+The array is printed every time two elements are swapped.
 
-Efficient for small data sets and nearly sorted data
+Time Complexity
 
-Swaps entire nodes in doubly linked lists
+Best case:    O(n log n)
+Average case: O(n log n)
+Worst case:   O(n²)
 
-Complexity Analysis:
+Shell Sort (Knuth Sequence)
 
-Best Case: O(n) - List is already sorted
+File: 100-shell_sort.c
 
-Average Case: O(n²)
+Shell Sort is an optimized version of Insertion Sort that allows the exchange of elements far apart.
+This implementation uses the Knuth sequence:
 
-Worst Case: O(n²) - List is reverse sorted
+1, 4, 13, 40, 121, ...
 
-Space: O(1) - In-place sorting
 
-Stability: Stable
+The array is printed each time the gap is reduced.
 
-3. Selection Sort (2-selection_sort.c)
-Function: void selection_sort(int *array, size_t size);
+No Big O file is required for Shell Sort, as its complexity depends on the gap sequence.
 
-Description:
+Cocktail Shaker Sort (Doubly Linked List)
 
-Divides the input list into two parts: sorted and unsorted
+Files: 101-cocktail_sort_list.c, 101-O
 
-Repeatedly selects the smallest (or largest) element from the unsorted part
+Cocktail Shaker Sort is a bidirectional variation of Bubble Sort.
+It traverses the list forward and backward, swapping nodes when needed.
 
-Moves it to the end of the sorted part
+The list is printed after each swap.
 
-Known for its simplicity but poor performance on large lists
+Time Complexity
 
-Complexity Analysis:
+Best case:    O(n)
+Average case: O(n²)
+Worst case:   O(n²)
 
-Best Case: O(n²) - Even if sorted, must check all elements
+🛠 Compilation
 
-Average Case: O(n²)
+Example compilation command:
 
-Worst Case: O(n²) - Always performs n(n-1)/2 comparisons
+gcc -Wall -Wextra -Werror -pedantic *.c -o sort
 
-Space: O(1) - In-place sorting
+✅ What This Project Covers
 
-Stability: Not stable (can change order of equal elements)
+Multiple sorting algorithms
 
-4. Quick Sort (3-quick_sort.c)
-Function: void quick_sort(int *array, size_t size);
+Arrays and doubly linked lists
 
-Description:
+In-place sorting
 
-Divide and conquer algorithm
+Printing after every swap
 
-Uses Lomuto partition scheme with last element as pivot
+Big O time complexity analysis
 
-Recursively sorts sub-arrays
-
-Efficient for large datasets
-
-Complexity Analysis:
-
-Best Case: O(n log n) - Good pivot selection
-
-Average Case: O(n log n)
-
-Worst Case: O(n²) - Poor pivot selection (already sorted/reverse sorted)
-
-Space: O(log n) - Recursive call stack
-
-Stability: Not stable
+👤 Author
+  Rama dafer ALshehri
+  Jana bakri
